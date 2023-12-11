@@ -4,14 +4,13 @@ html{
 }
 body{
     Width : 100vw;
-    Length : 100vw;
+    height : 100vw;
     background-color: hsla(300, 37%, 93%, 0.913);
     display: flex;
     flex-direction: column;
 }
 h1{
     color: rgb(0, 0, 0);
-    font-size:2rem;
 }
 h2{
     color: rgb(0, 0, 0);
@@ -22,7 +21,9 @@ header{
 }
 .listnav{
     background-color: #ff0000;
+    height: 3.75em;
     margin: 1rem 0;
+    z-index: 2;
 }
 .listnav ul{
     overflow: auto;
@@ -34,7 +35,7 @@ header{
 }
 .listnav a{
     color:#333;
-    font-weight: 900;
+    font-weight: block;
     text-decoration: none;
     text-align: center;
     display: block;
@@ -42,17 +43,26 @@ header{
 .listnav a:hover{
     color: blue;
 }
+.listnav ul ul{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    border-top: 1px solid #555;
+}
+.listnav ul li:hover> ul{
+    display: inherit;
+}
+.listnav ul ul li{
+    width: 100%;
+    float: none;
+}
 .flexnav{
     background-color:#ff0000;
     margin: 1rem 0;
     display: flex;
     justify-content: space-around;
-}
-.flexnav ul{
-
-}
-.flexnav li{
-
 }
 .flexnav a{
     color:#333;
@@ -62,6 +72,13 @@ header{
 }
 .flexnav a:hover{
     color: blue;
+}
+.flexnav ul li:hover> ul{
+    display: inherit;
+}
+.flexnav ul ul li{
+    width: 100%;
+    float: none;
 }
 section{
     display: flex;
@@ -130,7 +147,12 @@ img{
 footer{
     background: linear-gradient(to bottom, #ff0000, #fff)
 }
-]
+.gallery{
+    width: 70%;
+    height: 70%;
+    border: 0.03em rgba(0, 0, 0, 0.1);
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
 
 section{
     display: flex;
@@ -195,8 +217,8 @@ figure{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    row-gap: 0.5rem;
-    column-gap: 0.5rem;
+    row-gap: 0.1rem;
+    column-gap: 0.1rem;
 }
 @media (max-width: 600px){
     html{
